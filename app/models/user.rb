@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   def current_shouts
     shouts.current
   end
+  
+  def can_follow?(user)
+    !(user == self || self.followed_users.include?(user))
+  end
 end
