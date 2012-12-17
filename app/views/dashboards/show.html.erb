@@ -3,9 +3,9 @@
   <%= form.submit "Shout!" %>
 <% end %>
 
-<% @shouts.each do |shout| %>
-  <div>
-    <%= shout.content.body %>
-    - <%= time_ago_in_words(shout.created_at) %> ago
-  </div>
+<%= form_for @photo_shout do |form| %>
+  <%= form.file_field :image %>
+  <%= form.submit "Shout!" %>
 <% end %>
+
+<%= render @shouts%>
