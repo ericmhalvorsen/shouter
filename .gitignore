@@ -16,4 +16,4 @@
 
 # Ignore any attached files
 
-/public/system/photo_shouts
+/public/system/photo_shouts/**
