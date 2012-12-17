@@ -11,3 +11,26 @@
  *= require_self
  *= require_tree .
  */
+.shout {
+  font-size: 18px;
+  font-family: arial;
+  border-top: 2px solid gray;
+  border-collapse: collapse;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+
+.shout-content {
+  float: left;
+}
+
+.time {
+  float: right;
+  color: gray;
+}
+
+

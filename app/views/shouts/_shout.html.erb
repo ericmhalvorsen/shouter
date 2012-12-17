@@ -1,4 +1,5 @@
-<div>
-  <%= render shout.content %>
-  - <%= time_ago_in_words(shout.created_at) %> ago
+
+<div class="shout">
+  <span class="shout-content"><%= render shout.content %></span>
+  <span class="time"><%= time_ago_in_words(shout.created_at) %> ago </span>
 </div>

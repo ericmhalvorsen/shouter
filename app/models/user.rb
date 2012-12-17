@@ -9,6 +9,12 @@ class User < ActiveRecord::Base
   end
   
   def can_follow?(user)
-    !(user == self || self.followed_users.include?(user))
+    self_and_followed_user_ids.exclude?(user.id)
+  end
+  
+  private 
+  
+  def self_and_followed_user_ids
+    [id] + followed_user_ids
   end
 end
