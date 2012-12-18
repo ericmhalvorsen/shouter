@@ -9,11 +9,11 @@
 <body>
 
   <% if signed_in? %>
-    Welcome <%= current_user.email %>
-    - <%= link_to "Sign out", sign_out_path, method: :delete %>
+    <div class="login-info"><%= link_to "Sign out", sign_out_path, method: :delete %></div>
+    <h1 class="current-user">Welcome <%= current_user.email %></h1>
   <% else %>
-    <%= link_to "Sign in", sign_in_path %>
-    - <%= link_to "Sign up", sign_up_path %>
+    <div class="login-info"><%= link_to "Sign in", sign_in_path %>
+    - <%= link_to "Sign up", sign_up_path %></div>
   <% end %>
   
   <% flash.each do |key, value| %>

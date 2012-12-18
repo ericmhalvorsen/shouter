@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
     self_and_followed_user_ids.exclude?(user.id)
   end
   
+  def public_timeline
+    Timeline.new(id)
+  end
+  
   def timeline
     Shout.where(user_id: self_and_followed_user_ids).current
   end

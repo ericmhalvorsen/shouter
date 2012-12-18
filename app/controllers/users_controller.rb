@@ -3,6 +3,6 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @shouts = @user.current_shouts
+    @timeline = @user.public_timeline
   end
 end

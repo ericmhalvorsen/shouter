@@ -11,6 +11,32 @@
  *= require_self
  *= require_tree .
  */
+.login-info {
+  float: right;
+}
+
+.login-info a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.login-info a:hover {
+  text-decoration: underline;
+}
+
+form {
+  font-size: 18px;
+  display: inline;
+  padding: 10px;
+}
+
+form input {
+  margin-bottom: 20px;
+  margin-top: 10px;
+  width: 300px;
+  display: inline-block;
+}
+
 .shout {
   font-size: 18px;
   font-family: arial;
