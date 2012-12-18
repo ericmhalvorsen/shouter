@@ -37,6 +37,11 @@ form input {
   display: inline-block;
 }
 
+form input[type="checkbox"] {
+  width: 30px;
+  display: inline-block;
+}
+
 .shout {
   font-size: 18px;
   font-family: arial;
@@ -52,6 +57,10 @@ form input {
 
 .shout-content {
   float: left;
+}
+
+.private-indicator {
+  float: right;
 }
 
 .user {
