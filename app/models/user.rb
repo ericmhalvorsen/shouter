@@ -16,12 +16,16 @@ class User < ActiveRecord::Base
     self_and_followed_user_ids.exclude?(user.id)
   end
   
+  def following?(user)
+    self.followed_user_ids.include?(user.id)
+  end
+  
   def public_timeline
-    Timeline.new(id)
+    Timeline.new(shouts.public)
   end
   
   def timeline
-    Shout.where(user_id: self_and_followed_user_ids).current
+    Timeline.new(Shout.where(user_id: self_and_followed_user_ids))
   end
   
   private 

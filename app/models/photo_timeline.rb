@@ -1,11 +1,9 @@
-class Timeline
-  include ActiveModel::Conversion
-  
+class PhotoTimeline
   def initialize shouts
     @shouts = shouts
   end
 
   def shouts
-    @shouts.current
+    @shouts.where(content_type: "PhotoShout")
   end
 end

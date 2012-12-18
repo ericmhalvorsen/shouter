@@ -1,10 +1,16 @@
-<%= form_for @text_shout do |form| %>
-  <%= form.text_field :body, placeholder: "Shout here" %>
+<%= form_for @shout, url: text_shouts_path do |form| %>
+  <%= form.fields_for :content do |body| %>
+    <%= body.text_field :body, placeholder: "Shout here" %>
+  <% end %>
+  <%= form.check_box :public %>
   <%= form.submit "Shout!" %>
 <% end %>
 
-<%= form_for @photo_shout do |form| %>
-  <%= form.file_field :image %>
+<%= form_for @shout, url: photo_shouts_path do |form| %>
+  <%= form.fields_for :content do |file| %>
+    <%= file.file_field :image %>
+  <% end %>
+  <%= form.check_box :public %>
   <%= form.submit "Shout!" %>
 <% end %>
 

@@ -2,5 +2,6 @@
 <div class="shout">
   <span class="shout-content"><%= render shout.content %></span>
   <span class="time">&nbsp;<%= time_ago_in_words(shout.created_at) %> ago </span>
-  <span class="user"><%= shout.user.email %> - </span>
+  <span class="user">&nbsp;<%= shout.user.email %> - </span>
+  <span class="private-indicator"><%= "Private - " if !shout.public%></span>
 </div>

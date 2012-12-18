@@ -8,10 +8,10 @@ class TextShoutsController < ApplicationController
   private 
   
   def build_shout
-    current_user.shouts.new(content: build_content)
+    current_user.shouts.new(public: params[:shout][:public], content: build_content)
   end
   
   def build_content
-    TextShout.new(params[:text_shout])
+    TextShout.new(body: params[:shout][:content][:body])
   end
 end
