@@ -28,6 +28,10 @@
   float: left;
 }
 
+.user {
+  float: right;
+}
+
 .time {
   float: right;
   color: gray;
