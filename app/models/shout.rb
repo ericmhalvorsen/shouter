@@ -13,4 +13,9 @@ class Shout < ActiveRecord::Base
   def self.public
     current.where(public: true)
   end
+  
+  def self.search params
+    indicies = SearchIndex.search(params)
+    where(id: indicies.select(:shout_id))
+  end
 end

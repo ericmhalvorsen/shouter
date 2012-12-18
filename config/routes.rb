@@ -11,4 +11,6 @@ Shouter::Application.routes.draw do
   resources :users, only: [:show]
   
   post "/users/:id/follow" => "following_relationships#create", as: :follow_user
+  
+  resource :search, only: [:show]
 end
