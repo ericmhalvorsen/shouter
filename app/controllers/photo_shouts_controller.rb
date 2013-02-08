@@ -8,7 +8,9 @@ class PhotoShoutsController < ApplicationController
   private 
   
   def build_shout
-    current_user.shouts.new(public: params[:shout][:public], content: build_content)
+    if params[:shout][:content][:shout]
+      current_user.shouts.new(public: params[:shout][:public], content: build_content)
+    end
   end
   
   def build_content
